@@ -9,12 +9,12 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2 footer-section">
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-glow">
-                <span className="text-white font-bold text-xl">T</span>
+                <span className="text-white font-bold text-xl">⭐</span>
               </div>
-              <span className="text-2xl font-bold text-white">TechStore</span>
+              <span className="text-2xl font-bold text-white">PinchiShop</span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md text-body">
-              Tu tienda de confianza para productos tecnológicos de alta calidad. 
+              Tu tienda de confianza para productos de alta calidad. 
               Ofrecemos la mejor selección de dispositivos y accesorios con garantía y soporte técnico.
             </p>
             <div className="flex space-x-4">
@@ -69,7 +69,7 @@ const Footer = () => {
             <div className="space-y-3 text-gray-300">
               <p className="flex items-center">
                 <span className="mr-2">📧</span>
-                info@techstore.com
+                info@pinchishop.com
               </p>
               <p className="flex items-center">
                 <span className="mr-2">📞</span>
@@ -90,7 +90,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 TechStore. Todos los derechos reservados.
+            © 2024 PinchiShop. Todos los derechos reservados.
           </p>
           <div className="flex space-x-8 mt-4 md:mt-0">
             <a href="#" className="footer-link text-gray-400 hover:text-white text-sm">

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useCart } from '../context/CartContext'
 import { useParams, Link } from 'react-router-dom'
 
 const ProductoDetalle = () => {
@@ -8,6 +9,7 @@ const ProductoDetalle = () => {
   const [error, setError] = useState(null)
   const [quantity, setQuantity] = useState(1)
   const [selectedImage, setSelectedImage] = useState(0)
+  const { addToCart } = useCart()
 
   useEffect(() => {
     const fetchProducto = async () => {
@@ -30,8 +32,8 @@ const ProductoDetalle = () => {
   }, [idProducto])
 
   const handleAddToCart = () => {
-    // Simulación de agregar al carrito
-    alert(`Se agregaron ${quantity} unidades de "${producto.title}" al carrito`)
+    if (!producto) return
+    addToCart(producto, quantity)
   }
 
   const handleQuantityChange = (newQuantity) => {

@@ -1,14 +1,16 @@
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useState, useEffect, useMemo } from 'react'
+import { useParams, useLocation } from 'react-router-dom'
 import CardProducto from '../components/CardProducto'
 
 const Productos = () => {
   const { idCategoria } = useParams()
+  const location = useLocation()
+  const searchParams = useMemo(() => new URLSearchParams(location.search), [location.search])
   const [productos, setProductos] = useState([])
   const [filteredProductos, setFilteredProductos] = useState([])
   const [categories, setCategories] = useState([])
   const [isLoading, setIsLoading] = useState(true)
-  const [searchTerm, setSearchTerm] = useState('')
+  const [searchTerm, setSearchTerm] = useState(searchParams.get('q') || '')
   const [selectedCategory, setSelectedCategory] = useState('')
   const [priceRange, setPriceRange] = useState('all')
   const [sortBy, setSortBy] = useState('name')
@@ -34,6 +36,10 @@ const Productos = () => {
 
     fetchData()
   }, [])
+
+  useEffect(() => {
+    setSearchTerm(searchParams.get('q') || '')
+  }, [searchParams])
 
   useEffect(() => {
     let filtered = [...productos]
